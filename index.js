@@ -5,7 +5,7 @@ const cheerio = require("cheerio")
 let app = express()
 
 
-async function test() {
+async function main() {
     let response = await axios.get("https://mothership.sg/")
     let html = response.data
     const $ = cheerio.load(html)
@@ -18,7 +18,7 @@ async function test() {
 
 
 
-test()
+main()
 
 app.listen(3000, ()=> {
     console.log("Server Started")
